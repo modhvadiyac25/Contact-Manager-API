@@ -4,9 +4,7 @@ const {getContacts, createContact, putContact, getContact, deleteContact} = requ
 const validateToken = require("../middleware/validateTokenHandler");
 
 router.use(validateToken);
-console.log("[debug] : Contact Routes");
 router.route("/").get(getContacts).post(createContact);
-console.log("[debug] : contact routs with id");
 router.route("/:id").get(getContact).put(putContact).delete(deleteContact);
 
 // router.route("/").post(createContact);
